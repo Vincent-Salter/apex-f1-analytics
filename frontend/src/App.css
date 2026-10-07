@@ -1,0 +1,257 @@
+/* Main page layout */
+#root {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+#center {
+  min-height: calc(100vh - 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Apex branding */
+#center h1 {
+  margin: 0 0 16px;
+  color: var(--colour-text);
+  font-size: clamp(64px, 10vw, 96px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.brand-dot {
+  color: var(--colour-purple);
+}
+
+.tagline {
+  margin: 0 0 16px;
+  color: var(--colour-text);
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 500;
+}
+
+.read-the-docs {
+  max-width: 480px;
+  margin: 0 auto;
+  color: var(--colour-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Main action */
+.explore-button {
+  margin-top: 32px;
+  padding: 16px 24px;
+  border: 1px solid #cdbce9;
+  border-radius: 16px;
+  background: var(--colour-lavender);
+  color: #483261;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #ebe2f7;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.explore-button:hover {
+  background: #d1bfef;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #ebe2f7;
+}
+
+.explore-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #ebe2f7;
+}
+
+/* Expandable workspace */
+#analytics-panel {
+  width: 100%;
+  max-width: 650px;
+  margin-top: 40px;
+  padding: 28px;
+  border: 1px solid var(--colour-border);
+  border-radius: 24px;
+  background: #ffffff;
+  text-align: left;
+  box-shadow: 0 12px 32px rgb(52 52 73 / 5%);
+}
+
+#analytics-panel h2 {
+  margin: 0 0 12px;
+  color: #483261;
+  font-size: 22px;
+}
+
+#analytics-panel p {
+  margin: 0;
+  color: var(--colour-muted);
+  line-height: 1.7;
+}
+
+#analytics-panel p + p {
+  margin-top: 12px;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  #root {
+    padding: 32px 20px;
+  }
+
+  #center {
+    min-height: calc(100vh - 64px);
+  }
+
+  #analytics-panel {
+    padding: 22px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .explore-button {
+    transition: none;
+  }
+
+  .explore-button:hover,
+  .explore-button:active {
+    transform: none;
+  }
+}
+
+/* Driver selection */
+.driver-filter {
+  margin-top: 24px;
+}
+
+.driver-filter label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.driver-filter select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd5e6;
+  border-radius: 12px;
+  background: var(--colour-background);
+  color: var(--colour-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.driver-filter select:focus-visible {
+  outline: 3px solid var(--colour-purple);
+  outline-offset: 4px;
+}
+
+/* Pastel summary cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.stat-card {
+  padding: 20px 16px;
+  border-radius: 18px;
+}
+
+.stat-card--lavender {
+  background: #eee7fa;
+}
+
+.stat-card--mint {
+  background: #e1f0e8;
+}
+
+.stat-card--peach {
+  background: #fbe7dc;
+}
+
+.stat-card h3 {
+  margin: 0 0 12px;
+  color: #595166;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#analytics-panel .stat-value {
+  margin: 0;
+  color: var(--colour-text);
+  font-size: 26px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+#analytics-panel .stat-hint {
+  margin-top: 10px;
+  color: #686078;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Interactive lap-time chart */
+.lap-chart {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--colour-border);
+}
+
+.lap-chart h3 {
+  margin: 0 0 8px;
+  color: var(--colour-text);
+  font-size: 18px;
+}
+
+#analytics-panel .chart-description {
+  font-size: 13px;
+}
+
+.chart-container {
+  width: 100%;
+  min-width: 0;
+  height: 280px;
+  margin-top: 16px;
+}
+
+.export-button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: 1px solid #bdd8ca;
+  border-radius: 12px;
+  background: #e1f0e8;
+  color: #305e49;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.export-button:hover {
+  background: #cfe7da;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .export-button {
+    transition: none;
+  }
+}

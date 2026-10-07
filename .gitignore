@@ -1,0 +1,17 @@
+# Installed dependencies and generated output
+node_modules/
+dist/
+coverage/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Python environments and caches — for the future backend
+.venv/
+__pycache__/
+*.pyc
+
+# macOS metadata
+.DS_Store
