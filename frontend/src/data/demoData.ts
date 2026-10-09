@@ -20,6 +20,8 @@ export const demoLapTimes = [
   { lap: 5, lavender: 85.8, mint: 86.2, peach: 86.6 },
   { lap: 6, lavender: 86.2, mint: 86.8, peach: 87.0 },
 ]
+export type DemoLap = (typeof demoLapTimes)[number]
+
 
 export const driverColours: Record<DriverId, string> = {
   lavender: '#9476be',

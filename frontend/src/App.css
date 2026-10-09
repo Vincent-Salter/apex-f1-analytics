@@ -255,3 +255,145 @@
     transition: none;
   }
 }
+
+.api-status {
+  margin: 16px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.api-status--checking {
+  color: var(--colour-muted);
+}
+
+.api-status--connected {
+  color: #305e49;
+}
+
+.api-status--unavailable {
+  color: #915334;
+}
+.real-lap-preview {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--colour-border);
+  border-radius: 16px;
+  background: #f2f7f4;
+}
+
+.real-lap-preview h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.real-lap-preview ul {
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+.real-lap-preview li {
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Full-width dashboard layout */
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 32px;
+}
+
+#center {
+  min-height: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.read-the-docs {
+  max-width: none;
+  margin: 0;
+}
+
+.explore-button {
+  align-self: flex-start;
+}
+
+#analytics-panel {
+  width: 100%;
+  max-width: none;
+  margin: 32px 0 0;
+}
+
+.chart-container {
+  height: 360px;
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 20px 16px;
+  }
+
+  #analytics-panel {
+    padding: 20px;
+  }
+
+  .chart-container {
+    height: 280px;
+  }
+}
+.lap-details {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--colour-border);
+}
+
+.lap-details h3 {
+  margin: 0 0 8px;
+}
+
+.lap-table-scroll {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.lap-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.lap-table caption {
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+.lap-table th,
+.lap-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--colour-border);
+  white-space: nowrap;
+}
+
+.lap-table thead {
+  background: #eee7fa;
+}
+
+.lap-table tbody tr:hover {
+  background: #faf8fc;
+}
+
+.lap-delta--faster {
+  color: #305e49;
+  font-weight: 600;
+}
+
+.lap-delta--slower {
+  color: #915334;
+  font-weight: 600;
+}
+
